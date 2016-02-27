@@ -5,7 +5,7 @@ We conducted research on whether background music impacts concentration on cogni
 - Country
 - Metal 
 
-so that each group had an equal number of people. We operationalized concentration by counting the number of incorrect answers to 50 SAT-level verbal reasoning items completed under their assigned background music condition. The entire dataset can be downloaded here. Therefore, we are interested in whether there is some difference in concentration levels among the four different treatments. To justify our assumption, we use the variance of analysis (ANOVA). In other words, the **null hypothesis** (H0) is that there is no difference in concentration levels among the treatments. The **alternative hypothesis** (H1) is that there is some difference in concentration levels among the treatments. 
+so that each group had an equal number of people. We operationalized concentration by counting the number of incorrect answers to 50 SAT-level verbal reasoning items completed under their assigned background music condition. The entire dataset can be downloaded here. It contains two columns: **Score** (continuous) and **Treatment** (categorical). Therefore, we are interested in whether there is some difference in concentration levels among the four different treatments. To justify our assumption, we use the variance of analysis (ANOVA). In other words, the **null hypothesis** (H0) is that there is no difference in concentration levels among the treatments. The **alternative hypothesis** (H1) is that there is some difference in concentration levels among the treatments. 
 
 We first import data into Python and do some data cleaning as follows. We can see that each group has 25 observations. 
 ```python
