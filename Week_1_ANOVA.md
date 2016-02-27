@@ -99,7 +99,7 @@ Kurtosis:                       3.074   Cond. No.                         4.79
 Warnings:
 [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
 ```
-Since there is difference in concentration levels among the treatments, we want to know more details of the difference using post hoc test. That is, we are curious about whether a specific treatment is different from others. The results show that the mean of socre for treatment "Control" is different from that for all other treatments. Also, the mean of score for treatment "Rock" is significantly different from that for treatment "Country". However, "Rock" vs "Metal" and "Country" vs "Metal" have no any difference (reject = False). 
+Since the difference in concentration levels among the treatments exist, we want to know more details of the differences using post hoc test. That is, we are curious about the pairwise difference that whether a specific treatment is different from others. The multi comparison results show that the mean of socre for treatment "Control" is different from that for all other treatments. Also, the mean of score for treatment "Rock" is significantly different from that for treatment "Country". However, "Rock" vs "Metal" and "Country" vs "Metal" have no any difference (reject = False). 
 ```python
 >>> mc = multi.MultiComparison(SATtest['Score'],SATtest['Treatment'])
 >>> print(mc.tukeyhsd().summary())
