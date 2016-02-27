@@ -65,6 +65,8 @@ Treatment
 >>> plt.title("Boxplot of Score vs Treatment")
 >>> plt.show()
 ```
+![figure_1](https://cloud.githubusercontent.com/assets/16762941/13370622/5a181aba-dcdb-11e5-957b-f9263322ebb0.png)
+
 We now perform ANOVA analysis and check if the difference is statistically significant. The result shows that F-statistic is 25.81 with degree-of-freedom (96,3). The p-value = 2.50e-12 which is extremely smaller than 0.05, indicating that we reject the null hypothesis that there is no difference in concentration levels among the treatments. In other words, we accept the alternative hypothesis that the concentration levels are different among the treatments. 
 ```python
 >>> model = smf.ols(formula = "Score ~ C(Treatment)", data = SATtest)
