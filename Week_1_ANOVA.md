@@ -5,4 +5,4 @@ We conducted research on whether background music impacts concentration on cogni
 - Country
 - Metal 
 
-so that each group had an equal number of people. We operationalized concentration by counting the number of incorrect answers to 50 SAT-level verbal reasoning items completed under their assigned background music condition. The entire dataset can be downloaded here. 
+so that each group had an equal number of people. We operationalized concentration by counting the number of incorrect answers to 50 SAT-level verbal reasoning items completed under their assigned background music condition. The entire dataset can be downloaded here. Therefore, we are interested in whether there is some difference in concentration levels among the four different treatments. 
