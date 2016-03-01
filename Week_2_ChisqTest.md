@@ -68,7 +68,7 @@ Expected counts
 >>> plt.xlabel('Smoke')
 >>> plt.ylabel('Proportion Exercise')
 ```
-Even though the chi-square test is not significant, we still perform post hoc test just for exercise. We first define a function to run the chi-square test for each comparison of smoking, such as "Never" vs "Occas". The Bonferrnoi adjustment p-value is 0.05/6 = 0.0083. In other words, the difference of comparison like "Never" vs "Occas" is significant if the p-value is smaller than 0.0083. 
+Even though the chi-square test is not significant, we still perform post hoc comparison just for exercise. We first define a function to run the chi-square test for each comparison of smoking, such as "Never" vs "Occas". The Bonferrnoi adjustment p-value is 0.05/6 = 0.0083. In other words, the difference of comparison like "Never" vs "Occas" is significant if the p-value is smaller than 0.0083. 
 ```python
 def comp(smk_level_cmp):
     ctab = pd.crosstab(survey['Exercise'].map(recode_exer),survey['Smoke'].map(smk_level_cmp))
@@ -146,7 +146,7 @@ Exercise
 chi-square value, p value, degree freedom
 (0.18428630193336085, 0.66771524617245703, 1)
 ```
-In summary, the six post hoc test p-values are listed as follows. They are all greater than 0.0083 which indicates no any difference between the comparison. 
+In summary, the six post hoc comparison p-values are listed as follows. They are all greater than 0.0083 which indicates no any difference between the comparison. 
 
 | Comparison | p-value |
 |------------|---------|
