@@ -146,3 +146,13 @@ Exercise
 chi-square value, p value, degree freedom
 (0.18428630193336085, 0.66771524617245703, 1)
 ```
+In summary, the six post hoc test p-values are listed as follows. They are all greater than 0.0083 which indicates no any difference between the comparison. 
+
+| Comparison | p-value |
+|------------|---------|
+|"Never" vs "Occas"| 0.64 |
+|"Never" vs "Regul"| 0.95 |
+|"Never" vs "Heavy"| 0.63 |
+|"Occas" vs "Regul"| 0.68 |
+|"Occas" vs "Heavy"| 0.97 |
+|"Regul" vs "Heavy"| 0.67 |
