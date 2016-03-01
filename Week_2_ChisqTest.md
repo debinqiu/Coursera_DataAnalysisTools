@@ -159,6 +159,7 @@ In summary, the six post hoc comparison p-values are listed as follows. They are
 
 
 
-Reference:
+
+##Reference##:
 
 [1] Venables, W. N. and Ripley, B. D. (1999) *Modern Applied Statistics with S-PLUS*. Third Edition. Springer.
