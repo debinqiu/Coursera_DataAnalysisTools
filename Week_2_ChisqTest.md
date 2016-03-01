@@ -1,6 +1,6 @@
 ## Study association between student's Exercise and Smoke ##
 
-In this assignment, we are required to run a chi-squared test of independence. To do so, we used a survey dataset that contains the responses of 237 Statistics I students at the University of Adelaide to a number of questions. We selected a subset of the data consisting of "Exer" and "Smoke" features because we want to study the dependence between Exercise and Smoke. To be specific, we were interested in columns:
+In this assignment, we are required to run a chi-squared test of independence. To do so, we used a survey dataset that contains the responses of 237 Statistics I students at the University of Adelaide to a number of questions. We selected a subset of the data consisting of "Exer" and "Smoke" features because we want to study the dependence between Exercise and Smoke. To be specific, we were interested in columns (see [here](https://github.com/debinqiu/Coursera_DataAnalysisTools/blob/master/Survey.csv) for more details, from [1]):
 - **Exercise**: how often the student exercises- "Freq" (frequently), "Some", "None".
 - **Smoke**: how much the student smokes-"Heavy", "Regul" (regularly), "Occas" (occasionally), "Never".
 
@@ -156,3 +156,9 @@ In summary, the six post hoc comparison p-values are listed as follows. They are
 |"Occas" vs "Regul"| 0.68 |
 |"Occas" vs "Heavy"| 0.97 |
 |"Regul" vs "Heavy"| 0.67 |
+
+
+
+Reference:
+
+[1] Venables, W. N. and Ripley, B. D. (1999) *Modern Applied Statistics with S-PLUS*. Third Edition. Springer.
