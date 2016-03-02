@@ -34,3 +34,7 @@ We will examine the relationship between the number of distressed O-rings and la
 >>> plt.ylabel('Number of distressed O-rings')
 >>> plt.title('Scatterplot for the Association Between Field Check Pressure and Number of Distressed O-rings')
 ```
+
+![figure_1](https://cloud.githubusercontent.com/assets/16762941/13470615/09f5e41a-e07b-11e5-89db-6e06a01425c3.png)
+
+![figure_2](https://cloud.githubusercontent.com/assets/16762941/13470616/09f6371c-e07b-11e5-9777-563dd745b4a5.png)
