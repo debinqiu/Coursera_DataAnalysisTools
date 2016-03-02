@@ -68,6 +68,9 @@ Expected counts
 >>> plt.xlabel('Smoke')
 >>> plt.ylabel('Proportion Exercise')
 ```
+
+![proportion graph](https://cloud.githubusercontent.com/assets/16762941/13448353/83cb9cb6-dff0-11e5-90bb-829fdeb9f525.png)
+
 Even though the chi-square test is not significant, we still perform post hoc comparison just for exercise. We first define a function to run the chi-square test for each comparison of smoking, such as "Never" vs "Occas". The Bonferrnoi adjustment p-value is 0.05/6 = 0.0083. In other words, the difference of comparison like "Never" vs "Occas" is significant if the p-value is smaller than 0.0083. 
 ```python
 def comp(smk_level_cmp):
