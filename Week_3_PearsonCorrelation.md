@@ -38,3 +38,5 @@ We will examine the relationship between the number of distressed O-rings and la
 ![figure_1](https://cloud.githubusercontent.com/assets/16762941/13470615/09f5e41a-e07b-11e5-89db-6e06a01425c3.png)
 
 ![figure_2](https://cloud.githubusercontent.com/assets/16762941/13470616/09f6371c-e07b-11e5-9777-563dd745b4a5.png)
+
+We can see from the scatter plots that the number of distressed O-rings may have a negative correlation with temperature but may have a slightly positive correlation with the field check pressure.
