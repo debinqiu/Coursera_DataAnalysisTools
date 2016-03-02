@@ -60,4 +60,4 @@ Association between pressure and distress_ct
 r-squared, p-value
 (0.2846662708495058, 0.18800176478256808)
 ```
-
+Thus, it can be seen that the number of distressed O-rings has a correlation coefficient -0.511 with temperature and 0.285 with field check pressure, which is consistant with our previous guesses. Also, p-values show that the correlation between the number of distressed O-rings and temperature is significant (0.013 < 0.05) but is not significant (0.188 > 0.05) for the correlation between the number of distressed O-rings and field check pressure using significant level 0.05. In addition, since -0.51 is halfway to the maximum negative correlation of -1, this indicates the moderately strong negative linear relationship between the number of O-rings and temperature. This also implies a low temperature launch could be problematic for NASA engineers studying the O-ring data. 
