@@ -10,7 +10,7 @@ The **null hypothesis** is that the frequency of student's smoking is not associ
 
 The contingency table is summarized as follows.
 
-|       | Heavy   |  Regul  |  Occas  |  Never  |
+| Exer\Smoke      | Heavy   |  Regul  |  Occas  |  Never  |
 |-------|-----|-----|-----|-----|
 |  None    |  18  | 3  | 1   |  1  |
 |  Yes    |  171 | 16 | 16  |  10 |
@@ -149,7 +149,7 @@ Exercise
 chi-square value, p value, degree freedom
 (0.18428630193336085, 0.66771524617245703, 1)
 ```
-In summary, the six post hoc comparison p-values are listed as follows. They are all greater than 0.0083 which indicates no any difference between the comparison. 
+In summary, the six post hoc comparison p-values are listed as follows. They are all greater than 0.0083 which indicates no any difference between the two different frequency of smoking. 
 
 | Comparison | p-value |
 |------------|---------|
