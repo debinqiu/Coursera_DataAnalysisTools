@@ -1,1 +1,1 @@
-## Study the association between lanuch temperature and number of distress##
+## Study the association between lanuch temperature and the number of distress##
