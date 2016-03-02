@@ -39,4 +39,25 @@ We will examine the relationship between the number of distressed O-rings and la
 
 ![figure_2](https://cloud.githubusercontent.com/assets/16762941/13470616/09f6371c-e07b-11e5-9777-563dd745b4a5.png)
 
-We can see from the scatter plots that the number of distressed O-rings may have a negative correlation with temperature but may have a slightly positive correlation with the field check pressure.
+We can see from the scatter plots that the number of distressed O-rings may have a negative correlation with temperature but may have a slightly positive correlation with the field check pressure. To verify our conjectures, we calculate the pearson correlation coefficients as follows.
+```python
+# calculate the pearson correlation coefficients
+>>> print('Association between temperature and distress_ct')
+>>> print('---------------------------------------------')
+>>> print('r-squared, p-value')
+>>> print(pearsonr(challenger['temperature'], challenger['distress_ct']))
+Association between temperature and distress_ct
+---------------------------------------------
+r-squared, p-value
+(-0.51112638557405587, 0.012681761033635625)
+
+>>> print('Association between pressure and distress_ct')
+>>> print('---------------------------------------------')
+>>> print('r-squared, p-value')
+>>> print(pearsonr(challenger['field_check_pressure'], challenger['distress_ct']))
+Association between pressure and distress_ct
+---------------------------------------------
+r-squared, p-value
+(0.2846662708495058, 0.18800176478256808)
+```
+
