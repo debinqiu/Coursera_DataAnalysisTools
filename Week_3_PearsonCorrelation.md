@@ -7,5 +7,5 @@ In this assignment, we are dealing with pearson correlation which measures the l
 - field_check_pressure: field check pressure
 - flight_num: flight No.
 
-We will examine the relationship between the number of distressed O-rings and launch temperature, the number of distressed O-rings and field check pressure, respectively. 
+We will examine the relationship between the number of distressed O-rings and launch temperature, the number of distressed O-rings and field check pressure, respectively. To explore the possible association, we first make scatter plots to visualize the linear relationships between distress_ct versus temperature, and field_check_pressure. 
 
