@@ -73,7 +73,7 @@ Warnings:
 [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
 ```
 
-We now consider 'Gender' as the potential moderator that may affect the association between attractiveness and alcohol consumption. In other words, we run an ANOVA on "attractiveness" and "beer" for different gender. 
+We now consider 'Gender' as the potential moderator that may affect the association between attractiveness and alcohol consumption. In other words, we run an ANOVA on "attractiveness" and "beer" for different gender. First of all, we run an ANOVA for the subset of gender = Male. The ANOVA result shows F-statistic 20.52 and p-value 1.15e-05 indicating different levels of alcohol consumption yields a different mean attractiveness rating in conversation partners for males. 
 ```python
 # consider a moderator 'Gender' variable
 >>> data_male = data[(data['Gender'] == 'Male')]
@@ -117,6 +117,7 @@ Kurtosis:                       2.440   Cond. No.                         3.73
 Warnings:
 [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
 ```
+However, the ANOVA result below shows that there is no difference in attractiveness rating for different alcohol consumption for females. In summary, the average attractiveness for females for the three levels of alcohol is almost the same. Nevertheless, for males the difference in average attractiveness for the three levels is quite difference. This indicates gender is a moderator. 
 
 ```python
 # run an ANOVA for Gender = Female
@@ -156,4 +157,15 @@ Kurtosis:                       2.668   Cond. No.                         3.73
 
 Warnings:
 [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+```
+
+To see the moderator (interaction) "gender" with "beer", we look at the interaction graph which confirms the existness of interaction between "gender" and "beer".
+```python
+>>> p1, = plt.plot(np.array([0,2,4]), act_mean_male.Attractiveness.values)
+>>> p2, = plt.plot(np.array([0,2,4]), act_mean_female.Attractiveness.values)
+>>> plt.xlim([-1,5])
+>>> plt.legend([p1,p2],['Male','Female'],loc = 'lower left')
+>>> plt.xlabel("Beer (pints)")
+>>> plt.ylabel("Attractiveness")
+>>> plt.title("Mean plot of attractiveness for Male and Female")
 ```
