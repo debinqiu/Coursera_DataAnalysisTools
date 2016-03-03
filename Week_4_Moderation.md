@@ -117,7 +117,7 @@ Kurtosis:                       2.440   Cond. No.                         3.73
 Warnings:
 [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
 ```
-However, the ANOVA result below shows that there is no difference in attractiveness rating for different alcohol consumption for females. In summary, the average attractiveness for females for the three levels of alcohol is almost the same. Nevertheless, for males the difference in average attractiveness for the three levels is quite difference. This indicates gender is a moderator. 
+However, the ANOVA result below shows that there is no difference in attractiveness rating for different alcohol consumption for females. In summary, the average attractiveness for females for the three levels of alcohol is almost the same. Nevertheless, for males the difference in average attractiveness for the three levels is quite different. This indicates gender is a moderator. 
 
 ```python
 # run an ANOVA for Gender = Female
