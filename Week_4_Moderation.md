@@ -27,7 +27,8 @@ Out[5]:
 3              60            0  Female
 4              60            0  Female
 ```
-We first run an ANOVA without considering the gender variable. That is, we perform a one-way ANOVA using 'attractiveness' and 'Beer'. The means of attractiveness for each level of alcohol consumption are 63.7500, 64.6875, 46.5625, respectively. This implies that the attractiveness increases as drinking beer increases from 0 to 2, but decreases as drinking beer decreases from 2 to 4. In other words, more drunk would lead to less attractive. Also, the ANOVA yields F-statistic 13.31 and p-value 2.88e-05 indicating to reject the null hypothesis that there is no difference in attractiveness for different levels of alcohol consumption. 
+We first run an ANOVA without considering the gender variable. That is, we perform a one-way ANOVA using 'attractiveness' and 'Beer'. The means of attractiveness for each level of alcohol consumption are 63.7500, 64.6875, 46.5625, respectively. This implies that the attractiveness increases as drinking beer increases from 0 to 2, but decreases as drinking beer decreases from 2 to 4. In other words, more drunk would lead to less attractive. Also, the ANOVA yields F-statistic 13.31 and p-value 2.88e-05 indicating to reject the null hypothesis that there is no difference in attractiveness for different levels of alcohol consumption. There is sufficient
+evidence to indicate that different levels of alcohol consumption yields a different mean attractiveness rating in conversation partners.
 ```python
 # convert 'Beer(pints)' into categorical values
 >>> data['Beer'] = data['Beer(pints)'].astype('category')
@@ -66,6 +67,91 @@ Omnibus:                        0.105   Durbin-Watson:                   1.121
 Prob(Omnibus):                  0.949   Jarque-Bera (JB):                0.234
 Skew:                          -0.100   Prob(JB):                        0.890
 Kurtosis:                       2.722   Cond. No.                         3.73
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+```
+
+We now consider 'Gender' as the potential moderator that may affect the association between attractiveness and alcohol consumption. In other words, we run an ANOVA on "attractiveness" and "beer" for different gender. 
+```python
+# consider a moderator 'Gender' variable
+>>> data_male = data[(data['Gender'] == 'Male')]
+>>> data_female = data[(data['Gender'] == 'Female')]
+
+# run an ANOVA for Gender = Male
+>>> act_mean_male = data_male.groupby("Beer").mean()
+>>> print(act_mean_male)
+      Attractiveness
+Beer                
+0             66.875
+2             66.875
+4             35.625
+
+>>> model_male = smf.ols(formula = "Attractiveness ~ C(Beer)", data = data_male).fit()
+>>> print(model_male.summary())
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:         Attractiveness   R-squared:                       0.661
+Model:                            OLS   Adj. R-squared:                  0.629
+Method:                 Least Squares   F-statistic:                     20.52
+Date:                Wed, 02 Mar 2016   Prob (F-statistic):           1.15e-05
+Time:                        21:32:28   Log-Likelihood:                -90.576
+No. Observations:                  24   AIC:                             187.2
+Df Residuals:                      21   BIC:                             190.7
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+================================================================================
+                   coef    std err          t      P>|t|      [95.0% Conf. Int.]
+--------------------------------------------------------------------------------
+Intercept       66.8750      3.983     16.789      0.000        58.591    75.159
+C(Beer)[T.2] -2.132e-14      5.633  -3.78e-15      1.000       -11.715    11.715
+C(Beer)[T.4]   -31.2500      5.633     -5.547      0.000       -42.965   -19.535
+==============================================================================
+Omnibus:                        0.122   Durbin-Watson:                   1.914
+Prob(Omnibus):                  0.941   Jarque-Bera (JB):                0.337
+Skew:                          -0.076   Prob(JB):                        0.845
+Kurtosis:                       2.440   Cond. No.                         3.73
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+```
+
+```python
+# run an ANOVA for Gender = Female
+>>> act_mean_female = data_female.groupby("Beer").mean()
+>>> print(act_mean_female)
+      Attractiveness
+Beer                
+0             60.625
+2             62.500
+4             57.500
+
+>>> model_female = smf.ols(formula = "Attractiveness ~ C(Beer)", data = data_female).fit()
+>>> print(model_female.summary())
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:         Attractiveness   R-squared:                       0.110
+Model:                            OLS   Adj. R-squared:                  0.026
+Method:                 Least Squares   F-statistic:                     1.304
+Date:                Wed, 02 Mar 2016   Prob (F-statistic):              0.292
+Time:                        21:33:17   Log-Likelihood:                -76.457
+No. Observations:                  24   AIC:                             158.9
+Df Residuals:                      21   BIC:                             162.4
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+================================================================================
+                   coef    std err          t      P>|t|      [95.0% Conf. Int.]
+--------------------------------------------------------------------------------
+Intercept       60.6250      2.212     27.410      0.000        56.025    65.225
+C(Beer)[T.2]     1.8750      3.128      0.599      0.555        -4.630     8.380
+C(Beer)[T.4]    -3.1250      3.128     -0.999      0.329        -9.630     3.380
+==============================================================================
+Omnibus:                        0.221   Durbin-Watson:                   1.518
+Prob(Omnibus):                  0.895   Jarque-Bera (JB):                0.258
+Skew:                           0.192   Prob(JB):                        0.879
+Kurtosis:                       2.668   Cond. No.                         3.73
 ==============================================================================
 
 Warnings:
