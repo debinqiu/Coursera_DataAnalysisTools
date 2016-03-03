@@ -169,3 +169,4 @@ To see the moderator (interaction) "gender" with "beer", we look at the interact
 >>> plt.ylabel("Attractiveness")
 >>> plt.title("Mean plot of attractiveness for Male and Female")
 ```
+![interaction](https://cloud.githubusercontent.com/assets/16762941/13483276/0b7cff08-e0c1-11e5-9b5f-681d267a89c2.png)
