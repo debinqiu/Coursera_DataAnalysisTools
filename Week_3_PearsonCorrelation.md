@@ -1,6 +1,6 @@
 ## Study the association between the number of distressed O-rings vs temperature and pressure##
 
-In this assignment, we are dealing with pearson correlation which measures the linear association between two variables. We used shuttle launch data containing four variables from NASA:
+In this assignment, we are dealing with pearson correlation which measures the linear association between two quantitative variables. We used shuttle launch data containing four variables from NASA:
 
 - distress_ct: number of distressed O-rings
 - temperature: shuttle launch temperature
@@ -20,7 +20,7 @@ In this assignment, we are dealing with pearson correlation which measures the l
 >>> challenger = challenger.dropna()
 ```
 
-We will examine the relationship between the number of distressed O-rings and launch temperature, the number of distressed O-rings and field check pressure, respectively. To explore the possible association, we first make scatter plots to visualize the linear relationships between distress_ct versus temperature, and field_check_pressure. 
+We will examine the relationship between the number of distressed O-rings and launch temperature, the number of distressed O-rings and field check pressure, respectively. To explore the possible associations, we first make scatter plots to visualize the linear relationships between distress_ct versus temperature, and field_check_pressure. 
 ```python
 # scatter plot of 'temperature' vs 'distress_ct'
 >>> scat = seaborn.regplot(x = 'temperature',y = 'distress_ct',fit_reg = True, data = challenger)
@@ -60,4 +60,4 @@ Association between pressure and distress_ct
 r-squared, p-value
 (0.2846662708495058, 0.18800176478256808)
 ```
-Thus, it can be seen that the number of distressed O-rings has a correlation coefficient -0.511 with temperature and 0.285 with field check pressure, which is consistant with our previous guesses. Also, p-values show that the correlation between the number of distressed O-rings and temperature is significant (0.013 < 0.05) but is not significant (0.188 > 0.05) for the correlation between the number of distressed O-rings and field check pressure using significant level 0.05. In addition, since -0.51 is halfway to the maximum negative correlation of -1, this indicates the moderately strong negative linear relationship between the number of O-rings and temperature. This also implies a low temperature launch could be problematic for NASA engineers studying the O-ring data. 
+Thus, it can be seen that the number of distressed O-rings has a correlation coefficient -0.511 with temperature and 0.285 with field check pressure, which is consistent with our previous guesses. Also, p-values show that the correlation between the number of distressed O-rings and temperature is significant (0.013 < 0.05) but not significant (0.188 > 0.05) for the correlation between the number of distressed O-rings and field check pressure using significant level 0.05. In addition, since -0.51 is halfway to the maximum negative correlation of -1, this indicates the moderately strong negative linear relationship between the number of O-rings and temperature. This also implies a low temperature launch could be problematic for NASA engineers studying the O-ring data. Finally, 26.1% (= (-0.511)^2) of the variability in the number of distredded O-rings is described by variation in the temperature.
