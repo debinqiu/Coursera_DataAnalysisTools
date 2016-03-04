@@ -11,6 +11,7 @@ The details of the data can be seen as follows.
 >>> import os
 >>> import pandas as pd
 >>> import statsmodels.formula.api as smf
+>>> import statsmodels.stats.multicomp as multi
 >>> import numpy as np
 >>> import matplotlib.pyplot as plt
 # import attractiveness data
@@ -28,7 +29,7 @@ Out[5]:
 4              60            0  Female
 ```
 We first run an ANOVA without considering the gender variable. That is, we perform a one-way ANOVA using 'attractiveness' and 'Beer'. The means of attractiveness for each level of alcohol consumption are 63.7500, 64.6875, 46.5625, respectively. This implies that the attractiveness increases as drinking beer increases from 0 to 2, but decreases as drinking beer decreases from 2 to 4. In other words, more drunk would lead to less attractive. Also, the ANOVA yields F-statistic 13.31 and p-value 2.88e-05 indicating to reject the null hypothesis that there is no difference in attractiveness for different levels of alcohol consumption. There is sufficient
-evidence to indicate that different levels of alcohol consumption yields a different mean attractiveness rating in conversation partners.
+evidence to indicate that different levels of alcohol consumption yields a different mean attractiveness rating in conversation partners. 
 ```python
 # convert 'Beer(pints)' into categorical values
 >>> data['Beer'] = data['Beer(pints)'].astype('category')
@@ -71,6 +72,20 @@ Kurtosis:                       2.722   Cond. No.                         3.73
 
 Warnings:
 [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+```
+Since we reject the null hypothesis, a post hoc test is conducted as follows. We can see that the mean attractiveness of 0 pint vs 2 pint has no difference, but mean attractiveness of 0 pint vs 4 pints, 2 pints vs 4 pints are significantly different.
+```python
+>>> mc = multi.MultiComparison(data['Attractiveness'],data['Beer'])
+>>> print(mc.tukeyhsd().summary())
+
+Multiple Comparison of Means - Tukey HSD,FWER=0.05
+==============================================
+group1 group2 meandiff  lower    upper  reject
+----------------------------------------------
+  0      2     0.9375  -8.6504  10.5254 False 
+  0      4    -17.1875 -26.7754 -7.5996  True 
+  2      4    -18.125  -27.7129 -8.5371  True 
+----------------------------------------------
 ```
 
 We now consider 'Gender' as the potential moderator that may affect the association between attractiveness and alcohol consumption. In other words, we run an ANOVA on "attractiveness" and "beer" for different gender. First of all, we run an ANOVA for the subset of gender = Male. The ANOVA result shows F-statistic 20.52 and p-value 1.15e-05 indicating different levels of alcohol consumption yields a different mean attractiveness rating in conversation partners for males. 
